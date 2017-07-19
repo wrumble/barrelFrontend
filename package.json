@@ -42,7 +42,6 @@
     "typescript": "~2.3.3"
   },
   "devDependencies": {
-
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",
