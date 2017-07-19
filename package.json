@@ -8,7 +8,6 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "postinstall": "ng build --aot -prod",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -43,6 +42,7 @@
     "typescript": "~2.3.3"
   },
   "devDependencies": {
+
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",
