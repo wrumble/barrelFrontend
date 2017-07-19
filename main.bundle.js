@@ -755,7 +755,7 @@ var RegisterFormComponent = (function () {
         });
     };
     RegisterFormComponent.prototype.signUpMailerSubmit = function () {
-        var url = 'http://localhost:3000/subscribes';
+        var url = 'https://barrel-backend.herokuapp.com/subscribes';
         this.http.post(url, { email: this.signUpUser.email }).subscribe();
     };
     return RegisterFormComponent;
@@ -939,7 +939,7 @@ var _a, _b, _c, _d;
 var environment = {
     production: false,
     token_auth_config: {
-        apiBase: 'http://localhost:3000'
+        apiBase: 'https://barrel-backend.herokuapp.com/'
     }
 };
 //# sourceMappingURL=environment.js.map
