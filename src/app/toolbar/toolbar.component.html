@@ -1,24 +1,24 @@
-    <nav class="transparent">
-       <div class="nav-wrapper">
-         <a ref="#!" [routerLink]="['']" id="logo-container" class="brand-logo"></a>
-         <a href="#" id="side-nav-button" materialize="sideNav" data-activates="mobile-navBar" data-beloworigin="true" class="dropdown-button btn white-text transparent hide-on-med-and-up"><i class="material-icons">menu</i></a>
+  <nav class="transparent">
+     <div class="nav-wrapper">
+       <a ref="#!" [routerLink]="['']" id="logo-container" class="brand-logo"></a>
+       <a href="#" id="side-nav-button" materialize="sideNav" data-activates="mobile-navBar" data-beloworigin="true" onclick="Materialize.showStaggeredList('#mobile-navBar')" class="dropdown-button btn white-text transparent hide-on-med-and-up"><i class="material-icons">menu</i></a>
 
-          <ul class="left hide-on-med-and-down" id="navBar">
-            <li *ngIf="this.router.url !== '/about'"> <a [routerLink]="['/about']">About</a></li>
-            <li *ngIf="this.router.url !== '/'"> <a [routerLink]="['/home']">Home</a></li>
-            <li *ngIf="!(authService.userSignedIn$ | async)"> <a (click)="presentAuthDialog()" >Login</a></li>
-            <li *ngIf="!(authService.userSignedIn$ | async)"> <a (click)="presentAuthDialog('register')">Register</a></li>
-            <li *ngIf="(authService.userSignedIn$ | async)"><a (click)="logOut()">Logout</a></li>
-          </ul>
+        <ul class="left hide-on-med-and-down" id="navBar">
+          <li *ngIf="this.router.url !== '/'"> <a [routerLink]="['/home']">Home</a></li>
+          <li *ngIf="this.router.url !== '/about'"> <a [routerLink]="['/about']">About</a></li>
+          <li *ngIf="!(authService.userSignedIn$ | async)"> <a (click)="presentAuthDialog()" >Login</a></li>
+          <li *ngIf="!(authService.userSignedIn$ | async)"> <a (click)="presentAuthDialog('register')">Register</a></li>
+          <li *ngIf="(authService.userSignedIn$ | async)"><a (click)="logOut()">Logout</a></li>
+        </ul>
 
-          <ul class="dropdown-content transparent" id="mobile-navBar">
-            <li *ngIf="this.router.url !== '/about'"> <a [routerLink]="['/about']">About</a></li>
-            <li *ngIf="this.router.url !== '/'"> <a [routerLink]="['/home']">Home</a></li>
-            <li *ngIf="!(authService.userSignedIn$ | async)"> <a class="white-text" (click)="presentAuthDialog()" >Login</a></li>
-            <li *ngIf="!(authService.userSignedIn$ | async)"> <a class="white-text" (click)="presentAuthDialog('register')">Register</a></li>
-            <li *ngIf="(authService.userSignedIn$ | async)"><a class="white-text" (click)="logOut()">Logout</a></li>
-          </ul>
-        </div>
-      </nav>
+        <ul class="dropdown-content transparent" id="mobile-navBar">
+          <li *ngIf="this.router.url !== '/'"> <a class="white-text" [routerLink]="['/home']">Home</a></li>
+          <li *ngIf="this.router.url !== '/about'"> <a class="white-text" [routerLink]="['/about']">About</a></li>
+          <li *ngIf="!(authService.userSignedIn$ | async)"> <a class="white-text" (click)="presentAuthDialog()" >Login</a></li>
+          <li *ngIf="!(authService.userSignedIn$ | async)"> <a class="white-text" (click)="presentAuthDialog('register')">Register</a></li>
+          <li *ngIf="(authService.userSignedIn$ | async)"><a class="white-text" (click)="logOut()">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
 
-    <app-auth-dialog #authDialog ></app-auth-dialog>
+  <app-auth-dialog #authDialog ></app-auth-dialog>

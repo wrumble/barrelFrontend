@@ -1,3 +1,26 @@
-<p class="center white-text">
-  quiz works!
-</p>
+    <div *ngIf="pager.index < quiz?.questions.length">
+      <h5 class="flow-text"><span [innerHTML]="quiz?.questions[pager.index].text"></span></h5>
+      <br>
+      <div class="row text-left">
+        <div class="col s12 m12" *ngFor="let answer of quiz?.questions[pager.index].answers">
+          <div class="answer">
+            <input type="checkbox" [(ngModel)]="answer.selected" (ngModelChange)="onSelect(answer)"/><label class="black-text flow-text"> {{answer.text}} </label>
+          </div>
+        </div>
+      </div>
+      <footer class="row">
+        <div class="col s6 m6"></div>
+        <div class="col s6 m6">
+          <div *ngIf="pager.index < quiz?.questions.length - 1">
+            <button id="nextButton" class="btn-flat black-text right flow-text" (click)="goTo(pager.index + 1);">Next</button>
+          </div>
+          <div *ngIf="pager.index == quiz?.questions.length - 1">
+            <button id="nextButton" class="btn-flat black-text right flow-text" (click)="goTo(pager.index + 1);">Finish</button>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div *ngIf="pager.index == quiz?.questions.length">
+      {{ selections }}
+    </div>

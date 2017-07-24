@@ -4,7 +4,7 @@ import {AuthService} from "../services/auth.service";
 import {Router} from "@angular/router";
 import { Http } from '@angular/http';
 
-declare var jQuery:any;
+declare var jQuery: any;
 
 @Component({
   selector: 'app-toolbar',
@@ -20,8 +20,6 @@ export class ToolbarComponent implements OnInit {
      private router:Router,
      private http:Http
    ) { }
-
-   
 
   ngOnInit(){}
   ngAfterViewInit(){

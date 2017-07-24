@@ -3,13 +3,19 @@
     <figcaption id="phrase">
       Wine just got<br> less wanky.
     </figcaption>
-    <a [routerLink]="['/quiz']">Take our wanky quiz.</a>
+    <a (click)="openQuizModal()">Take our wanky quiz.</a>
 </figure>
 
 <figure id="container" class="hide-on-med-and-up white-text top center">
-    <img id="logo-mobile" src="/assets/images/logos/SolidWhiteLogo.png" alt="">
+  <img id="logo" src="/assets/images/logos/SolidWhiteLogo.png" alt="">
     <figcaption id="phrase-mobile">
       Wine just got<br> less wanky.
     </figcaption>
-    <a [routerLink]="['/quiz']">Take our wanky quiz.</a>
+    <a (click)="openQuizModal()">Take our wanky quiz.</a>
 </figure>
+
+<div id="modal" class="modal" materialize="modal" [materializeActions]="modalActions">
+  <div class="modal-content">
+    <app-quiz></app-quiz>
+  </div>
+</div>
