@@ -2,9 +2,10 @@
       <h5 class="flow-text"><span [innerHTML]="quiz?.questions[pager.index].text"></span></h5>
       <br>
       <div class="row text-left">
-        <div class="col s12 m12" *ngFor="let answer of quiz?.questions[pager.index].answers">
+        <div class="col s12 m12" *ngFor="let answer of quiz?.questions[pager.index].answers; let i = index">
           <div class="answer">
-            <input type="checkbox" [(ngModel)]="answer.selected" (ngModelChange)="onSelect(answer)"/><label class="black-text flow-text"> {{answer.text}} </label>
+            <input [id]="i" type="checkbox" [(ngModel)]="answer.selected" (ngModelChange)="onSelect(answer)"/>
+            <label [for]="i" class="black-text flow-text"> {{answer.text}} </label>
           </div>
         </div>
       </div>
@@ -22,5 +23,13 @@
     </div>
 
     <div *ngIf="pager.index == quiz?.questions.length">
-      {{ selections }}
+      <p class="flow-text">
+          Congratulations! You have terrible taste in wine. Would you like to sign up to be sent some terrible wine?
+      </p>
+      <!-- <div class="modal" materialize="modal" [materializeActions]="modalActions">
+        <div class="modal-content">
+          <button id="yesButton" class="btn-flat black-text right flow-text" (click)="presentAuthDialog">Fuck yea!</button>
+          <button id="noButton" class="btn-flat black-text right flow-text" (click)="goTo(pager.index + 1);">No Just e-mail me shit </button>
+        </div>
+      </div> -->
     </div>

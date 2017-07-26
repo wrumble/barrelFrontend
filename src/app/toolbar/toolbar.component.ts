@@ -15,13 +15,13 @@ export class ToolbarComponent implements OnInit {
 
   @ViewChild('authDialog') authDialog: AuthDialogComponent;
 
-
   constructor(public authService:AuthService,
      private router:Router,
      private http:Http
    ) { }
 
   ngOnInit(){}
+
   ngAfterViewInit(){
     jQuery(".button-collapse").sideNav();
   }

@@ -18,6 +18,7 @@
     import { AboutComponent } from './about/about.component';
     import { QuizComponent } from './quiz/quiz.component';
     import { FooterComponent } from './footer/footer.component';
+import { MailingListFormComponent } from './mailing-list-form/mailing-list-form.component';
 
     @NgModule({
       declarations: [
@@ -29,7 +30,8 @@
         RegisterFormComponent,
         AboutComponent,
         QuizComponent,
-        FooterComponent
+        FooterComponent,
+        MailingListFormComponent
       ],
       imports: [
         BrowserModule,
