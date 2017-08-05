@@ -20,6 +20,10 @@ export class HomeComponent {
     this.modalActions.emit({action:"modal", params:['open']});
   }
 
+  closeQuizModal() {
+    this.modalActions.emit({action:"modal", params:['close']});
+  }
+
   openMailingListModal() {
     this.mailingListModalAction.emit({action:"mailingListModal", params:['open']});
   }
