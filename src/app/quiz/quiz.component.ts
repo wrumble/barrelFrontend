@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, ViewChild } from '@angular/core';
 import { QuizService } from '../services/quiz.service';
 import { Answer, Question, Quiz } from '../models/index';
 import {MaterializeAction} from "angular2-materialize";
+import { HomeComponent } from '../home/home.component';
 import {AuthDialogComponent} from "../auth-dialog/auth-dialog.component";
 import {AuthService} from "../services/auth.service";
 import {Router} from "@angular/router";
@@ -15,7 +16,8 @@ import { Http } from '@angular/http';
 })
 export class QuizComponent implements OnInit {
 
-@ViewChild('authDialog') authDialog: AuthDialogComponent;
+  @ViewChild('homeScreen') homeScreen: HomeComponent;
+  @ViewChild('authDialog') authDialog: AuthDialogComponent;
 
   quiz: Quiz;
   pager = {
@@ -26,7 +28,7 @@ export class QuizComponent implements OnInit {
   selections: string[] = Array();
 
   constructor(private quizService: QuizService,
-    public authService:AuthService,
+     public authService:AuthService,
      private router:Router,
      private http:Http
    ) { }
@@ -55,6 +57,10 @@ export class QuizComponent implements OnInit {
    } else {
      this.selections.push(selectionText);
    }
+ }
+
+ openMailingListModal() {
+   this.homeScreen.openMailingListModal();
  }
 
  presentAuthDialog(){

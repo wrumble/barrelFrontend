@@ -1,4 +1,4 @@
-<figure id="container" class="hide-on-med-and-down white-text top center">
+<figure id="container" class="hide-on-small-and-down white-text top center">
     <img id="logo" src="/assets/images/logos/SolidWhiteLogo.png" alt="">
     <figcaption id="phrase">
       Wine just got<br> less wanky.
@@ -7,15 +7,38 @@
 </figure>
 
 <figure id="container" class="hide-on-med-and-up white-text top center">
-  <img id="logo" src="/assets/images/logos/SolidWhiteLogo.png" alt="">
+  <img id="logo-mobile" src="/assets/images/logos/SolidWhiteLogo.png" alt="">
     <figcaption id="phrase-mobile">
       Wine just got<br> less wanky.
     </figcaption>
     <a (click)="openQuizModal()">Take our wanky quiz.</a>
 </figure>
+<div class="center white-text">
+  Sign up to our mailing list.
+</div>
+<form (ngSubmit)="signUpMailerSubmit()" #f="ngForm" >
+  <div class="row">
+    <div id="formContent" class="input-field col s6 center offset-s3">
+      <input id="email"
+             type="email"
+             required
+             name='email'
+             [(ngModel)]="email"
+             class="validate center">
+      <label class="white-text"for="email">Email</label>
+      <a id="signUp" class="right white-text btn-flat">Sign Up</a>
+    </div>
+  </div>
+</form>
 
 <div id="modal" class="modal" materialize="modal" [materializeActions]="modalActions">
   <div class="modal-content">
     <app-quiz></app-quiz>
+  </div>
+</div>
+
+<div id="mailingListModal" class="modal" materialize="modal" [materializeActions]="mailingListModalAction">
+  <div class="modal-content">
+    <app-mailing-list-form></app-mailing-list-form>
   </div>
 </div>
